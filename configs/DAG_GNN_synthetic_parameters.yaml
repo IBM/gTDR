@@ -1,0 +1,30 @@
+# model
+encoder: 'mlp'  # Type of encoder to use
+decoder: 'mlp'  # Type of decoder to use
+data_variable_size: 10  # Size of the data variable
+x_dims: 1  # Number of input dimensions
+z_dims: 1  # Number of latent variable dimensions
+encoder_hidden: 64  # Number of hidden units in encoder
+decoder_hidden: 64  # Number of hidden units in decoder
+batch_size: 100  # Number of samples per batch
+encoder_dropout: 0.0  # Dropout rate for encoder
+decoder_dropout: 0.0  # Dropout rate for decoder
+
+# training
+lr: 0.003  # Learning rate
+lr_decay: 200  # After how many epochs to decay LR by a factor of gamma
+gamma: 1.0  # LR decay factor
+tau_A: 0.0  # Coefficient for L-1 norm of A
+lambda_A: 0.0  # Coefficient for DAG constraint h(A)
+c_A: 1  # Coefficient for absolute value h(A)
+graph_threshold: 0.3  # Threshold for learned adjacency matrix binarization
+h_tol: 1e-8  # The tolerance of error of h(A) to zero
+k_max_iter: 100  # The max iteration number for searching lambda and c
+epochs: 100  # Number of epochs to train
+optimizer: 'Adam' # Choose between Adam, LBFGS, SGD
+
+# system
+use_cuda: True  # Whether to use CUDA for training
+save_folder: './outputs/DAG-GNN/' # Directory to save results
+save_results: true
+seed: 40

@@ -1,0 +1,31 @@
+# data:
+data_dir: '../data/METR-LA/'
+  
+# model:
+name: 'GANF_Traffic'
+n_blocks: 6
+n_components: 1
+input_size: 1
+hidden_size: 32
+n_hidden: 1
+
+# training:
+batch_size: 64
+weight_decay: 0.0005
+n_epochs: 1
+additional_iter: 10
+lr: 0.001
+max_iter: 10
+h_tol: 0.000001
+rho: 1.0
+rho_max: 1000000000000000
+alpha: 0.0
+batch_norm: false
+dropout: 0.0
+
+# system:
+output_dir: './outputs/GANF/checkpoint/model/'
+graph_dir: null
+seed: 18
+use_cuda: true
+save_results: true
