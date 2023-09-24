@@ -1,0 +1,42 @@
+# data:
+dataset_name: "ogbn-arxiv"
+dataset_root: "../data/"
+
+# model:
+hidden_features: 256
+num_layers: 3
+model_name: "SAGE"
+
+# training:
+lr: 0.003
+epochs: 15 #
+train_sampler: "FastSampler"
+train_batch_size: 1024
+train_max_num_batches: 100
+train_fanouts: [15, 10, 5]
+train_prefetch: 1
+train_type: "dp" # or "serial" 
+
+test_epoch_frequency: 1 
+test_batch_size: 4096
+test_max_num_batches: 50
+batchwise_test_fanouts: [20, 20, 20]
+test_prefetch: 1
+test_type: "batchwise"
+final_test_batchsize: 1024
+final_test_fanouts: [20, 20, 20]
+patience: 1000
+use_lrs: False
+
+# system:
+save_results: true
+job_name: "example_single_machine"
+output_root: "./outputs/SALIENT/"
+ddp_dir: "NONE"
+overwrite_job_dir: True
+total_num_nodes: 1
+max_num_devices_per_node: 2
+num_workers: 30
+one_node_ddp: False
+performance_stats: False
+verbose: False
