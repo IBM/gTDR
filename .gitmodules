@@ -1,3 +1,6 @@
 [submodule "packages/fast_sampler/parallel-hashmap"]
 	path = packages/fast_sampler/parallel-hashmap
 	url = https://github.com/greg7mdp/parallel-hashmap.git
+[submodule "fast_sampler/parallel-hashmap"]
+	path = fast_sampler/parallel-hashmap
+	url = https://github.com/greg7mdp/parallel-hashmap.git
